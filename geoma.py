@@ -81,7 +81,7 @@ def get_text_messages(message):
         elif message.text == 'Справочное пособие':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton("")
-            file = open('geoma./Spravochnik_arhiv.zip', 'rb')
+            file = open('geoma./Spravochnik_pdf.pdf', 'rb')
             markup.add(btn1)
             bot.send_message(message.from_user.id, 'Файл может отправляться некоторое время, подождите пожалуйста.', reply_markup=markup)
             bot.send_document(message.chat.id, file, reply_markup=markup)
