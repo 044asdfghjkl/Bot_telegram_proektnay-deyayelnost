@@ -103,7 +103,7 @@ def get_text_messages(message):
             btn6 = types.KeyboardButton('Обратно к подразделу "Углы и параллельность"')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
             bot.send_message(message.from_user.id, 'Выбери интересующую справочную информацию по теме "Углы"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Угол\n2. Градусная мера угла\n3. Виды улов\n4. Угол между прямыми\n5. Угол, образованный от пересечения прямых и секущей', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Угол\n \n2. Градусная мера угла\n \n3. Виды улов\n \n4. Угол между прямыми\n \n5. Угол, образованный от пересечения прямых и секущей', reply_markup=markup)
 
         elif message.text == '1. Угол':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -168,7 +168,7 @@ def get_text_messages(message):
             btn5 = types.KeyboardButton('Обратно к подразделу "Углы и параллельность"')
             markup.add(btn1, btn2, btn3, btn4, btn5)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Параллельность"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Аксиома параллельности\n2. Признаки параллельных прямых\n3. Теорема Фалеса\n4. "Расширенная" теорема Фалеса', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Аксиома параллельности\n \n2. Признаки параллельных прямых\n \n3. Теорема Фалеса\n \n4. "Расширенная" теорема Фалеса', reply_markup=markup)
 
         elif message.text == '1. Аксиома параллельности':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -225,7 +225,7 @@ def get_text_messages(message):
              btn10 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
              markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10)
              bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Геометрические места точек"', reply_markup=markup)
-             bot.send_message(message.from_user.id, '1. Серединный перпендикуляр\n2. Биссектриса угла\n3. Параллельная прямая\n4. Две взаимно перпендикулярные прямые\n5. Окружность: множество точек\n6. Две параллельные \n7. Прямой угол на полуокружности\n8. Две симметричный дуги\n9. Окружность Аполлония',reply_markup=markup)
+             bot.send_message(message.from_user.id, '1. Серединный перпендикуляр\n \n2. Биссектриса угла\n \n3. Параллельная прямая\n \n4. Две взаимно перпендикулярные прямые\n \n5. Окружность: множество точек\n6. Две параллельные\n \n7. Прямой угол на полуокружности\n \n8. Две симметричный дуги\n \n9. Окружность Аполлония', reply_markup=markup)
 
         elif message.text == '1. Серединный перпендикуляр':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -318,7 +318,7 @@ def get_text_messages(message):
             btn14 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn11, btn10, btn12, btn13,btn14 )
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Треугольник"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Неравенство треугольника\n2. Признаки равенства треугольников\n3. Признаки подобия треугольников\n4. Элементы треугольника\n5. Площадь треугольника\n6. Теорема косинусов/синусов\n7. Вписанная/Описанная окружность, вычисление  радиусов\n8. Прямоугольный треугольник, его свойства и признаки\n9. Тригонометрические функции острых углов прямоугольного треугольника\n10. Классификация треугольников\n11. Равнобедренный треугольник \n12. Правильный треугольник\n13. Дополнительные теоремы о треугольнике',reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Неравенство треугольника\n \n2. Признаки равенства треугольников\n \n3. Признаки подобия треугольников\n \n4. Элементы треугольника\n \n5. Площадь треугольника\n \n6. Теорема косинусов/синусов\n \n7. Вписанная/Описанная окружность, вычисление  радиусов\n \n8. Прямоугольный треугольник, его свойства и признаки\n \n9. Тригонометрические функции острых углов прямоугольного треугольника\n \n10. Классификация треугольников\n \n11. Равнобедренный треугольник\n \n12. Правильный треугольник\n \n13. Дополнительные теоремы о треугольнике',reply_markup=markup)
 
         elif message.text == '1. Неравенство треугольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -500,7 +500,7 @@ def get_text_messages(message):
             btn7 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4,btn5, btn6, btn7)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Параллелограмм"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Параллелограмм, его свойства и признаки\n2. Параллелограмм, его дополнительные свойства\n3. Формулы параллелограмма\n4. Ромб\n5.Прямоугольник\n6.Квадрат', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Параллелограмм, его свойства и признаки\n \n2. Параллелограмм, его дополнительные свойства\n \n3. Формулы параллелограмма\n \n4. Ромб\n \n5. Прямоугольник\n \n6. Квадрат', reply_markup=markup)
 
         elif message.text == '1. Параллелограмм, его свойства и признаки':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -589,7 +589,7 @@ def get_text_messages(message):
             btn6 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Трапеция"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Трапеция, ее элементы\n2. Некоторые свойства трапеции\n3. Равнобокая трапеция\n4. Теорема о 4 точках трапеция\n5. Дополнительно о трапеции', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Трапеция, ее элементы\n \n2. Некоторые свойства трапеции\n \n3. Равнобокая трапеция\n \n4. Теорема о 4 точках трапеция\n \n5. Дополнительно о трапеции', reply_markup=markup)
 
         elif message.text == '1. Трапеция, ее элементы':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -665,7 +665,7 @@ def get_text_messages(message):
             btn9 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Окружность"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Окружность кратко\n2. Круг\n3. Прямая и окружность\n4. Две окружности\n5. Углы и окружность\n6. Общие касательные двух окружностей\n7. Вписанная окружность\n8. Описанная окружность',reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Окружность кратко\n \n2. Круг\n \n3. Прямая и окружность\n \n4. Две окружности\n \n5. Углы и окружность\n \n6. Общие касательные двух окружностей\n \n7. Вписанная окружность\n \n8. Описанная окружность',reply_markup=markup)
 
         elif message.text == '1. Окружность кратко':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -832,7 +832,7 @@ def get_text_messages(message):
             markup.add( btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11)
             bot.send_message(message.from_user.id, 'Площади равных фигур равны.\n \nЕсли фигура составлена из нескольких фигур, не имеющих общих внутренних точек, то ее площадь равна сумме площадей этих фигур.\n \nФигуры, имеющие равные площади, называются равновеликими', reply_markup=markup)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Площадь"', reply_markup=markup)
-            bot.send_message(message.from_user.id, '1. Площадь квадрата\n2. Площадь прямоугольника\n3. Площадь параллелограмма\n4. Площадь треугольника\n5. Некоторые соотношения площадей треугольников\n6. Площадь трапеции\n7. Соотношения площадей, связанных с трапецией\n8. Площадь правильного n - угольника\n9. Площадь круга', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Площадь квадрата\n \n2. Площадь прямоугольника\n \n3. Площадь параллелограмма\n \n4. Площадь треугольника\n \n5. Некоторые соотношения площадей треугольников\n \n6. Площадь трапеции\n \n7. Соотношения площадей, связанных с трапецией\n \n8. Площадь правильного n - угольника\n \n9. Площадь круга', reply_markup=markup)
 
         elif message.text == '9. Площадь круга':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
