@@ -2,7 +2,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('BOT - TOKEN')
+bot = telebot.TeleBot('6776600656:AAGd9Z9WqPdqMdNi5sNhvEnQb5hk4T4d7hY')
 
 # стартовая команда
 @bot.message_handler(commands=['start'])
@@ -95,16 +95,17 @@ def get_text_messages(message):
 # Углы
         elif message.text == 'Углы':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn1 = types.KeyboardButton('Угол')
-            btn2 = types.KeyboardButton('Градусная мера углов')
-            btn3 = types.KeyboardButton('Виды углов')
-            btn4 = types.KeyboardButton('Угол между прямыми')
-            btn5 = types.KeyboardButton('Углы, образованные от пересечения прямых и секущей')
+            btn1 = types.KeyboardButton('1. Угол')
+            btn2 = types.KeyboardButton('2. Градусная мера углов')
+            btn3 = types.KeyboardButton('3. Виды углов')
+            btn4 = types.KeyboardButton('4. Угол между прямыми')
+            btn5 = types.KeyboardButton('5. Углы, образованные от пересечения прямых и секущей')
             btn6 = types.KeyboardButton('Обратно к подразделу "Углы и параллельность"')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
             bot.send_message(message.from_user.id, 'Выбери интересующую справочную информацию по теме "Углы"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Угол\n2. Градусная мера угла\n3. Виды улов\n4. Угол между прямыми\n5. Угол, образованный от пересечения прямых и секущей', reply_markup=markup)
 
-        elif message.text == 'Угол':
+        elif message.text == '1. Угол':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -112,7 +113,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Углом называется фигура, образованная двумя лучами, выходящими из одной точки (вершины).\n \nЛуч, выходящий из вершины угла и делящий его пополам, называется биссектрисой угла.', reply_markup=markup)
 
-        elif message.text == 'Градусная мера углов':
+        elif message.text == '2. Градусная мера углов':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -124,35 +125,32 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Радиан - величина угла, градусная мера которого равна (180/пи)°.', reply_markup=markup)
 
-        elif message.text == 'Виды углов':
+        elif message.text == '3. Виды углов':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./ygol4.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Угол, равный половине развернутого, называется прямым (90°).\n \nУгол меньше прямого называется острым.\n \nУгол больше прямого, но меньше развернутого называется тупым.', reply_markup=markup)
-
             file1 = open('geoma./ygol5.jpg', 'rb')
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Смежные углы\n \nДва угла, у которых одна сторона общая, а две другие являются дополнительными лучами, называются смежными.\n \nСумма смежных углов равна 180°.\n \nУгол, смежный с прямым, - прямой', reply_markup=markup)
-
             file2 = open('geoma./ygol6.jpg', 'rb')
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Вертикальные углы\n \nДва угла, стороны одного из которых являются дополнительными лучами сторон другого, называются вертикальными.\n \nВертикальные углы равны', reply_markup=markup)
 
-        elif message.text == 'Угол между прямыми':
+        elif message.text == '4. Угол между прямыми':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./ygol7.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Углом между двумя пересекающимися прямыми называется меньший из вертикальных углов, образовавшихся при пересечении.\n \nПрямые, образующие прямой угол, называются перпендикулярными.\n \nДве прямые плоскости, не имеющие общих точек, называются параллельными.', reply_markup=markup)
-
             file1 = open('geoma./ygol8.jpg', 'rb')
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'При пересечении двух прямых третьей (секущей) образуются пары углов:\n \n(1; 2), (3; 4), (5; 6) и (7; 8) накрест лежащие;\n \n(1; 8), (5; 3), (4; 6) и (7; 2) cooтветственные;\n \n(1; 3), (2; 4), (5; 8) и (7; 6) одно сторонние', reply_markup=markup)
 
-        elif message.text == 'Углы, образованные от пересечения прямых и секущей':
+        elif message.text == '5. Углы, образованные от пересечения прямых и секущей':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -163,37 +161,36 @@ def get_text_messages(message):
 # Параллельность
         elif message.text == 'Параллельность':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn1 = types.KeyboardButton('Аксиома параллельности')
-            btn2 = types.KeyboardButton('Признаки параллельных прямых')
-            btn3 = types.KeyboardButton('Теорема Фалеса')
-            btn4 = types.KeyboardButton('"Расширенная" теорема Фалеса')
+            btn1 = types.KeyboardButton('1. Аксиома параллельности')
+            btn2 = types.KeyboardButton('2. Признаки параллельных прямых')
+            btn3 = types.KeyboardButton('3. Теорема Фалеса')
+            btn4 = types.KeyboardButton('4. "Расширенная" теорема Фалеса')
             btn5 = types.KeyboardButton('Обратно к подразделу "Углы и параллельность"')
             markup.add(btn1, btn2, btn3, btn4, btn5)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Параллельность"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Аксиома параллельности\n2. Признаки параллельных прямых\n3. Теорема Фалеса\n4. "Расширенная" теорема Фалеса', reply_markup=markup)
 
-        elif message.text == 'Аксиома параллельности':
+        elif message.text == '1. Аксиома параллельности':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             bot.send_message(message.from_user.id, 'Через точку, не лежащую на данной прямой, проходит только одна прямая, параллельная данной.', reply_markup=markup)
 
-        elif message.text == 'Признаки параллельных прямых':
+        elif message.text == '2. Признаки параллельных прямых':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./pr1.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Если две различные прямые параллельны третьей, то они параллельны между собой (транзитивность параллельности).', reply_markup=markup)
-
             file1 = open('geoma./pr2.jpg', 'rb')
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Если при пересечении двух прямых третьей накрест лежащие углы равны, то прямые параллельны.\n \nЕсли при пересечении двух прямых третьей соответственные углы равны, то прямые параллельны.\n \nЕсли при пересечении двух прямых третьей сумма односторонних углов равна 180°, прямые параллельны', reply_markup=markup)
-
             file2 = open('geoma./pr3.jpg', 'rb')
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Сумма углов треугольника равна 180°', reply_markup=markup)
 
-        elif message.text == 'Теорема Фалеса':
+        elif message.text == '3. Теорема Фалеса':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -205,7 +202,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Деление отрезка на равные части', reply_markup=markup)
 
-        elif message.text == '"Расширенная" теорема Фалеса':
+        elif message.text == '4. "Расширенная" теорема Фалеса':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -216,20 +213,21 @@ def get_text_messages(message):
 # Геометрические места точек
         elif message.text == 'Геометрические места точек':
              markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-             btn1 = types.KeyboardButton("Серединный перпендикуляр")
-             btn2 = types.KeyboardButton('Биссектриса угла')
-             btn3 = types.KeyboardButton('Параллельная прямая')
-             btn4 = types.KeyboardButton('Две вз. перпен. прямые')
-             btn5 = types.KeyboardButton('Окружность мн.т.')
-             btn6 = types.KeyboardButton('Две параллельные прямые')
-             btn7 = types.KeyboardButton('Прямой угол на полуокружности')
-             btn8 = types.KeyboardButton('Две симетричные дуги')
-             btn9 = types.KeyboardButton('Окружность Аполлония')
+             btn1 = types.KeyboardButton("1. Серединный перпендикуляр")
+             btn2 = types.KeyboardButton('2. Биссектриса угла')
+             btn3 = types.KeyboardButton('3. Параллельная прямая')
+             btn4 = types.KeyboardButton('4. Две вз. перпен. прямые')
+             btn5 = types.KeyboardButton('5. Окружность мн.т.')
+             btn6 = types.KeyboardButton('6. Две параллельные прямые')
+             btn7 = types.KeyboardButton('7. Прямой угол на полуокружности')
+             btn8 = types.KeyboardButton('8. Две симетричные дуги')
+             btn9 = types.KeyboardButton('9. Окружность Аполлония')
              btn10 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
              markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10)
              bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Геометрические места точек"', reply_markup=markup)
+             bot.send_message(message.from_user.id, '1. Серединный перпендикуляр\n2. Биссектриса угла\n3. Параллельная прямая\n4. Две взаимно перпендикулярные прямые\n5. Окружность: множество точек\n6. Две параллельные \n7. Прямой угол на полуокружности\n8. Две симметричный дуги\n9. Окружность Аполлония',reply_markup=markup)
 
-        elif message.text == 'Серединный перпендикуляр':
+        elif message.text == '1. Серединный перпендикуляр':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -237,7 +235,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, равноудаленных от двух данных точек, есть серединный перпендикуляр отрезка, соединяющего эти точки (на нем лежат центры окружностей, проходящих через данные две точки)', reply_markup=markup)
 
-        elif message.text == 'Биссектриса угла':
+        elif message.text == '2. Биссектриса угла':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -245,7 +243,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, равноудаленных от сторон данного угла (меньшего, чем развернутый), есть биссектриса угла (на ней лежат центры окружностей, касающихся сторон угла)', reply_markup=markup)
 
-        elif message.text == 'Параллельная прямая':
+        elif message.text == '3. Параллельная прямая':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -253,7 +251,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, равноудаленных от двух параллельных прямых, есть параллельная им прямая, проходящая через середину отрезка их общего перпендикуляра (на ней лежат центры окружностей, касающихся данных прямых)', reply_markup=markup)
 
-        elif message.text == 'Две вз. перпен. прямые':
+        elif message.text == '4. Две вз. перпен. прямые':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -261,7 +259,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, равноудаленных от двух пересекающихся прямых, есть две взаимно перпендикулярные прямые, на которых лежат биссектрисы вертикальных углов, образовавшихся при пересечении данных прямых (на них лежат центры окружностей, касающихся данных прямых)', reply_markup=markup)
 
-        elif message.text == 'Окружность мн.т.':
+        elif message.text == '5. Окружность мн.т.':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -269,7 +267,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, удаленных на данное расстояние от точки, есть окружность с центром в данной точке.', reply_markup=markup)
 
-        elif message.text == 'Две параллельные прямые':
+        elif message.text == '6. Две параллельные прямые':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -277,7 +275,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, удаленных на данное расстояние от прямой, есть две параллельные ей прямые.', reply_markup=markup)
 
-        elif message.text == 'Прямой угол на полуокружности':
+        elif message.text == '7. Прямой угол на полуокружности':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -285,7 +283,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество вершин прямоугольных треугольников с данной гипотенузой есть окружность, построенная на гипотенузе как на диаметре (исключая концы гипотенузы)', reply_markup=markup)
 
-        elif message.text == 'Две симетричные дуги':
+        elif message.text == '8. Две симетричные дуги':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -293,7 +291,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Множество точек, из которых данный отрезок виден под даным углом, есть две симметричные, опирающиеся на данный отрезок, дуги (исключая концы этих дуг)', reply_markup=markup)
 
-        elif message.text == 'Окружность Аполлония':
+        elif message.text == '9. Окружность Аполлония':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -304,24 +302,25 @@ def get_text_messages(message):
  #треугольник
         elif message.text == 'Треугольник':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn1 = types.KeyboardButton("Неравенство треугольника")
-            btn2 = types.KeyboardButton('Признаки равенства треугольников')
-            btn3 = types.KeyboardButton('Признаки подобия треугольников')
-            btn4 = types.KeyboardButton('Элементы треугольника')
-            btn5 = types.KeyboardButton('Площадь треугольника')
-            btn6 = types.KeyboardButton('Теорема косинусов/синусов')
-            btn7 = types.KeyboardButton('Вписанная/Описанная окружность, вычесление радиусов')
-            btn8 = types.KeyboardButton('Прямойугольный треугольник, его свойства и признаки')
-            btn9 = types.KeyboardButton("Триногометрические функции острых углов прямоугольного треуольника")
-            btn10 = types.KeyboardButton('Классификация треугольников')
-            btn11 = types.KeyboardButton('Равнобедренный треугольник')
-            btn12 = types.KeyboardButton('Правильный треугольник')
-            btn13 = types.KeyboardButton('Дополнительные теоремы о треугольнике')
+            btn1 = types.KeyboardButton("1. Неравенство треугольника")
+            btn2 = types.KeyboardButton('2. Признаки равенства треугольников')
+            btn3 = types.KeyboardButton('3. Признаки подобия треугольников')
+            btn4 = types.KeyboardButton('4. Элементы треугольника')
+            btn5 = types.KeyboardButton('5. Площадь треугольника')
+            btn6 = types.KeyboardButton('6. Теорема косинусов/синусов')
+            btn7 = types.KeyboardButton('7. Вписанная/Описанная окружность, вычисление радиусов')
+            btn8 = types.KeyboardButton('8. Прямоугольный треугольник, его свойства и признаки')
+            btn9 = types.KeyboardButton("9. Тригонометрические функции острых углов прямоугольного треугольника")
+            btn10 = types.KeyboardButton('10. Классификация треугольников')
+            btn11 = types.KeyboardButton('11. Равнобедренный треугольник')
+            btn12 = types.KeyboardButton('12. Правильный треугольник')
+            btn13 = types.KeyboardButton('13. Дополнительные теоремы о треугольнике')
             btn14 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn11, btn10, btn12, btn13,btn14 )
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Треугольник"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Неравенство треугольника\n2. Признаки равенства треугольников\n3. Признаки подобия треугольников\n4. Элементы треугольника\n5. Площадь треугольника\n6. Теорема косинусов/синусов\n7. Вписанная/Описанная окружность, вычисление  радиусов\n8. Прямоугольный треугольник, его свойства и признаки\n9. Тригонометрические функции острых углов прямоугольного треугольника\n10. Классификация треугольников\n11. Равнобедренный треугольник \n12. Правильный треугольник\n13. Дополнительные теоремы о треугольнике',reply_markup=markup)
 
-        elif message.text == 'Неравенство треугольника':
+        elif message.text == '1. Неравенство треугольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -333,7 +332,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'В треугольнике против большей стороны лежит больший угол, против большего угла большая сторона.', reply_markup=markup)
 
-        elif message.text == 'Признаки равенства треугольников':
+        elif message.text == '2. Признаки равенства треугольников':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -341,7 +340,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Признаки равенства треугольников\n \nПо двум сторонам и углу между ними (С У С)\n \nПо стороне и двум прилежащим к ней углам (У С У)\n \nПо трем сторонам (С С С)\n \nСходственные (соответствующие) элементы равных треугольников равны.', reply_markup=markup)
 
-        elif message.text == 'Признаки подобия треугольников':
+        elif message.text == '3. Признаки подобия треугольников':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -352,7 +351,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Прямая, параллельная стороне треугольника, отсекает от него треугольник, подобный данному.\n \nСходственные линейные элементы подобных треугольников пропорциональны сходственным сторонам.\n \nПериметры подобных треугольников относятся как сходственные стороны.\n \nПлощади подобных треугольников относятся как квадраты сходственных сторон.\n \n', reply_markup=markup)
 
-        elif message.text == 'Элементы треугольника':
+        elif message.text == '4. Элементы треугольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -375,14 +374,14 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file5, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Серединным перпендикуляром называется прямая, перпендикулярная стороне треугольника и делящая ее пополам.\n \nВсе серединные перпендикуляры сторон треугольника пересекаются в одной точке центре описанной около треугольника окружности. Около каждого треугольника можно описать окружность и притом только одну.\n \nТочка пересечения серединных треугольника перпендикуляров является точкой пересечения высот треугольника, образованного средними линиями данного.', reply_markup=markup)
 
-        elif message.text == 'Площадь треугольника':
+        elif message.text == '5. Площадь треугольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./tr12.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
 
-        elif message.text == 'Теорема косинусов/синусов':
+        elif message.text == '6. Теорема косинусов/синусов':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -391,7 +390,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Квадрат стороны треугольника равен сумме квадратов двух других сторон без удвоенного произведения этих сторон на косинус угла между ними.', reply_markup=markup)
             bot.send_message(message.from_user.id, 'Стороны треугольника пропорциональны синусам противолежащих им углов.', reply_markup=markup)
 
-        elif message.text == 'Вписанная/Описанная окружность, вычесление радиусов':
+        elif message.text == '7. Вписанная/Описанная окружность, вычисление радиусов':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -409,7 +408,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Вычесление радиусов вписанной и описанной окружности:', reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Прямойугольный треугольник, его свойства и признаки':
+        elif message.text == '8. Прямоугольный треугольник, его свойства и признаки':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -428,7 +427,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Соотношения в прямоугольном треугольнике:', reply_markup=markup)
             bot.send_photo(message.chat.id, file3, reply_markup=markup)
 
-        elif message.text == 'Триногометрические функции острых углов прямоугольного треуольника':
+        elif message.text == '9. Тригонометрические функции острых углов прямоугольного треугольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -438,7 +437,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
 
-        elif message.text == 'Классификация треугольников':
+        elif message.text == '10. Классификация треугольников':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -446,7 +445,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Треугольники классифицируют по сторонам: разносторонние, равнобедренные, равносторонние; а также по углам: остроугольные, тупоугольные и прямоугольные.', reply_markup=markup)
 
-        elif message.text == 'Равнобедренный треугольник':
+        elif message.text == '11. Равнобедренный треугольник':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -458,7 +457,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Все эти свойства равнобедренного треугольника обратимы и могут быть использованы для получения признаков равнобедренного треугольника.', reply_markup=markup)
 
-        elif message.text == 'Правильный треугольник':
+        elif message.text == '12. Правильный треугольник':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -472,7 +471,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Площадь равностороннего треугольника:', reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Дополнительные теоремы о треугольнике':
+        elif message.text == '13. Дополнительные теоремы о треугольнике':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -492,17 +491,18 @@ def get_text_messages(message):
 # Параллелограм
         elif message.text == 'Параллелограмм':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn1 = types.KeyboardButton("Параллелограмм, его свойства и признаки")
-            btn2 = types.KeyboardButton('Параллелограмм, его дополнительные свойства')
-            btn3 = types.KeyboardButton('Формулы параллелограмма')
-            btn4 = types.KeyboardButton('Ромб')
-            btn5 = types.KeyboardButton('Прямоугольник')
-            btn6 = types.KeyboardButton('Квадрат')
+            btn1 = types.KeyboardButton("1. Параллелограмм, его свойства и признаки")
+            btn2 = types.KeyboardButton('2. Параллелограмм, его дополнительные свойства')
+            btn3 = types.KeyboardButton('3. Формулы параллелограмма')
+            btn4 = types.KeyboardButton('4. Ромб')
+            btn5 = types.KeyboardButton('5. Прямоугольник')
+            btn6 = types.KeyboardButton('6. Квадрат')
             btn7 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4,btn5, btn6, btn7)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Параллелограмм"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Параллелограмм, его свойства и признаки\n2. Параллелограмм, его дополнительные свойства\n3. Формулы параллелограмма\n4. Ромб\n5.Прямоугольник\n6.Квадрат', reply_markup=markup)
 
-        elif message.text == 'Параллелограмм, его свойства и признаки':
+        elif message.text == '1. Параллелограмм, его свойства и признаки':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -512,7 +512,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Признаки параллелограмма:\n \nЕсли в четырехугольнике две противоположные стороны равны и параллельны, то это параллелограмм.\n \nЕсли в четырехугольнике противоположные стороны попарно равны, то это параллелограмм.\n \nЕсли в четырехугольнике диагонали, пересекаясь, делятся пополам, то это параллелограмм.', reply_markup=markup)
 
-        elif message.text == 'Параллелограмм, его дополнительные свойства':
+        elif message.text == '2. Параллелограмм, его дополнительные свойства':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -527,7 +527,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Середина любого отрезка с концами на противоположных сторонах параллелограмма лежит на прямой, проходящей через середины двух других сторон.', reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Формулы параллелограмма':
+        elif message.text == '3. Формулы параллелограмма':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -540,7 +540,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
             bot.send_message(message.from_user.id, 'Периметр параллелограмма: P = 2a + 2b', reply_markup=markup)
 
-        elif message.text == 'Ромб':
+        elif message.text == '4. Ромб':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -555,7 +555,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Площадь ромба:', reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Прямоугольник':
+        elif message.text == '5. Прямоугольник':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -570,7 +570,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Площадь прямоугольника:', reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Квадрат':
+        elif message.text == '6. Квадрат':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -581,16 +581,17 @@ def get_text_messages(message):
 # Трапеция
         elif message.text == 'Трапеция':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn1 = types.KeyboardButton("Трапеция, ее элементы")
-            btn2 = types.KeyboardButton('Некоторые свойства трапеции')
-            btn3 = types.KeyboardButton('Равнобокая трапеция')
-            btn4 = types.KeyboardButton('Теорема о 4 точках трапеция')
-            btn5 = types.KeyboardButton('Дополнительно о трапеции')
+            btn1 = types.KeyboardButton("1. Трапеция, ее элементы")
+            btn2 = types.KeyboardButton('2. Некоторые свойства трапеции')
+            btn3 = types.KeyboardButton('3. Равнобокая трапеция')
+            btn4 = types.KeyboardButton('4. Теорема о 4 точках трапеция')
+            btn5 = types.KeyboardButton('5. Дополнительно о трапеции')
             btn6 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Трапеция"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Трапеция, ее элементы\n2. Некоторые свойства трапеции\n3. Равнобокая трапеция\n4. Теорема о 4 точках трапеция\n5. Дополнительно о трапеции', reply_markup=markup)
 
-        elif message.text == 'Трапеция, ее элементы':
+        elif message.text == '1. Трапеция, ее элементы':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -602,7 +603,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Площадь трапеции:', reply_markup=markup)
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
 
-        elif message.text == 'Некоторые свойства трапеции':
+        elif message.text == '2. Некоторые свойства трапеции':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -619,7 +620,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'В трапецию можно вписать окружность тогда и только тогда, когда сумма оснований равна сумме боковых сторон.\n \nBC+AD = AB + CD', reply_markup=markup)
             bot.send_photo(message.chat.id, file3, reply_markup=markup)
 
-        elif message.text == 'Равнобокая трапеция':
+        elif message.text == '3. Равнобокая трапеция':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -631,7 +632,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'В равнобедренную трапецию можно вписать окружность, если боковая сторона равна средней линии.', reply_markup=markup)
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
 
-        elif message.text == 'Теорема о 4 точках трапеция':
+        elif message.text == '4. Теорема о 4 точках трапеция':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -639,7 +640,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Теорема о четырех точках трапеции:\n \nСередины оснований, точка пересечения диагоналей и точка пересечения продолжений боковых сторон трапеции лежат на одной прямой.', reply_markup=markup)
             bot.send_photo(message.chat.id, file, reply_markup=markup)
 
-        elif message.text == 'Дополнительно о трапеции':
+        elif message.text == '5. Дополнительно о трапеции':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -653,19 +654,20 @@ def get_text_messages(message):
 # Окружность
         elif message.text == 'Окружность':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn1 = types.KeyboardButton("Окружность кратко")
-            btn2 = types.KeyboardButton('Круг')
-            btn3 = types.KeyboardButton('Прямая и окружность')
-            btn4 = types.KeyboardButton('Две окружности')
-            btn5 = types.KeyboardButton('Углы и окружность')
-            btn6 = types.KeyboardButton('Общие касательные двух окружностей')
-            btn7 = types.KeyboardButton('Вписанная окружность')
-            btn8 = types.KeyboardButton('Описанная окружность')
+            btn1 = types.KeyboardButton("1. Окружность кратко")
+            btn2 = types.KeyboardButton('2. Круг')
+            btn3 = types.KeyboardButton('3. Прямая и окружность')
+            btn4 = types.KeyboardButton('4. Две окружности')
+            btn5 = types.KeyboardButton('5. Углы и окружность')
+            btn6 = types.KeyboardButton('6. Общие касательные двух окружностей')
+            btn7 = types.KeyboardButton('7. Вписанная окружность')
+            btn8 = types.KeyboardButton('8. Описанная окружность')
             btn9 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Окружность"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Окружность кратко\n2. Круг\n3. Прямая и окружность\n4. Две окружности\n5. Углы и окружность\n6. Общие касательные двух окружностей\n7. Вписанная окружность\n8. Описанная окружность',reply_markup=markup)
 
-        elif message.text == 'Окружность кратко':
+        elif message.text == '1. Окружность кратко':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -681,7 +683,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Длина дуги:', reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Круг':
+        elif message.text == '2. Круг':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -704,7 +706,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Центры всех окружностей, про- ходящих через две данные точки, лежат на серединном перпендикуляре к отрезку с концами в данных точках﻿', reply_markup=markup)
             bot.send_photo(message.chat.id, file5, reply_markup=markup)
 
-        elif message.text == 'Прямая и окружность':
+        elif message.text == '3. Прямая и окружность':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -723,7 +725,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Если из точки вне окружности к ней проведены касательная и секущая, то квадрат длины отрез- ка касательной равен произведению всего отрезка секущей на его внешнюю часть.\n \nПроизведения длин отрезков секущих, проведенных из одной точки, равны', reply_markup=markup)
             bot.send_photo(message.chat.id, file4, reply_markup=markup)
 
-        elif message.text == 'Две окружности':
+        elif message.text == '4. Две окружности':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -737,7 +739,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Две окружности, имеющие общий центр, называются концентрическими', reply_markup=markup)
             bot.send_photo(message.chat.id, file3, reply_markup=markup)
 
-        elif message.text == 'Углы и окружность':
+        elif message.text == '5. Углы и окружность':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -760,7 +762,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Угол с вершиной вне окружности (угол между двумя секущими)', reply_markup=markup)
             bot.send_photo(message.chat.id, file5, reply_markup=markup)
 
-        elif message.text == 'Общие касательные двух окружностей':
+        elif message.text == '6. Общие касательные двух окружностей':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -778,7 +780,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Если одна окружность лежит внутри другой, то общих касательных нет', reply_markup=markup)
             bot.send_photo(message.chat.id, file4, reply_markup=markup)
 
-        elif message.text == 'Вписанная окружность':
+        elif message.text == '7. Вписанная окружность':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -794,7 +796,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'В выпуклый четырехугольник можно вписать окружность тогда и только тогда, когда суммы длин его противоположных сторон равны', reply_markup=markup)
             bot.send_photo(message.chat.id, file3, reply_markup=markup)
 
-        elif message.text == 'Описанная окружность':
+        elif message.text == '8. Описанная окружность':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -817,21 +819,22 @@ def get_text_messages(message):
 # Площадь
         elif message.text == 'Площади':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            btn2 = types.KeyboardButton("Площадь квадрата")
-            btn3 = types.KeyboardButton('Площадь прямоугольника')
-            btn4 = types.KeyboardButton('Площадь параллелограмма')
-            btn5 = types.KeyboardButton('Площадь треугольника.')
-            btn6 = types.KeyboardButton('Некоторые соотношения площадей треугольников')
-            btn7 = types.KeyboardButton('Площадь трапеции')
-            btn8 = types.KeyboardButton('Соотношения площадей, связанных с трапецией')
-            btn9 = types.KeyboardButton('Площадь правильного n - угольника')
-            btn10 = types.KeyboardButton('Площадь круга')
+            btn2 = types.KeyboardButton("1. Площадь квадрата")
+            btn3 = types.KeyboardButton('2. Площадь прямоугольника')
+            btn4 = types.KeyboardButton('3. Площадь параллелограмма')
+            btn5 = types.KeyboardButton('4. Площадь треугольника.')
+            btn6 = types.KeyboardButton('5. Некоторые соотношения площадей треугольников')
+            btn7 = types.KeyboardButton('6. Площадь трапеции')
+            btn8 = types.KeyboardButton('7. Соотношения площадей, связанных с трапецией')
+            btn9 = types.KeyboardButton('8. Площадь правильного n - угольника')
+            btn10 = types.KeyboardButton('9. Площадь круга')
             btn11 = types.KeyboardButton('Вернуться к выбору раздела Планиметрии')
             markup.add( btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11)
             bot.send_message(message.from_user.id, 'Площади равных фигур равны.\n \nЕсли фигура составлена из нескольких фигур, не имеющих общих внутренних точек, то ее площадь равна сумме площадей этих фигур.\n \nФигуры, имеющие равные площади, называются равновеликими', reply_markup=markup)
             bot.send_message(message.from_user.id, 'Выберите интересующую справочную информацию по теме "Площадь"', reply_markup=markup)
+            bot.send_message(message.from_user.id, '1. Площадь квадрата\n2. Площадь прямоугольника\n3. Площадь параллелограмма\n4. Площадь треугольника\n5. Некоторые соотношения площадей треугольников\n6. Площадь трапеции\n7. Соотношения площадей, связанных с трапецией\n8. Площадь правильного n - угольника\n9. Площадь круга', reply_markup=markup)
 
-        elif message.text == 'Площадь круга':
+        elif message.text == '9. Площадь круга':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -842,21 +845,21 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file1, reply_markup=markup)
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
 
-        elif message.text == 'Площадь правильного n - угольника':
+        elif message.text == '8. Площадь правильного n - угольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./pl16.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
 
-        elif message.text == 'Площадь трапеции':
+        elif message.text == '6. Площадь трапеции':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./pl11.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
 
-        elif message.text == 'Соотношения площадей, связанных с трапецией':
+        elif message.text == '7. Соотношения площадей, связанных с трапецией':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -869,7 +872,7 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
             bot.send_photo(message.chat.id, file3, reply_markup=markup)
 
-        elif message.text == 'Некоторые соотношения площадей треугольников':
+        elif message.text == '5. Некоторые соотношения площадей треугольников':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -889,7 +892,7 @@ def get_text_messages(message):
             bot.send_message(message.from_user.id, 'Медиана делит треугольник на два равновеликих треугольника.\n \nТри медианы треугольника делят его на шесть равновеликих треугольников', reply_markup=markup)
             bot.send_photo(message.chat.id, file4, reply_markup=markup)
 
-        elif message.text == 'Площадь треугольника.':
+        elif message.text == '4. Площадь треугольника.':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
@@ -903,20 +906,20 @@ def get_text_messages(message):
             bot.send_photo(message.chat.id, file2, reply_markup=markup)
             bot.send_photo(message.chat.id, file3, reply_markup=markup)
 
-        elif message.text == 'Площадь параллелограмма':
+        elif message.text == '3. Площадь параллелограмма':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             file = open('geoma./pl1.jpg', 'rb')
             bot.send_photo(message.chat.id, file, reply_markup=markup)
 
-        elif message.text == 'Площадь прямоугольника':
+        elif message.text == '2. Площадь прямоугольника':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
             bot.send_message(message.from_user.id, 'S = a * b', reply_markup=markup)
 
-        elif message.text == 'Площадь квадрата':
+        elif message.text == '1. Площадь квадрата':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             btn1 = types.KeyboardButton('')
             markup.add(btn1)
